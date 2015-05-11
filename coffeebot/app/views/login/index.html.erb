@@ -1,0 +1,21 @@
+<%= error_messages_for :login %>
+
+<% form_tag(:action => "authenticate") do   %>
+<table class=login>
+  <tr>
+    <td>
+      <table>
+        <tr>
+          <td><label>email </label></td>
+          <td><%= text_field 'login', 'name' %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><%= submit_tag "Login" %></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<% end %>
+

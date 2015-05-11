@@ -1,0 +1,207 @@
+// Place all the styles related to the Brew controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  color: #333;
+  //font: 1.2em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 1.2em 'Arbutus Slab', serif;
+  background: image-url('ricepaper2.png') repeat;
+}
+
+#mainContent,
+#mainHeader,
+#mainFooter {
+  margin: 0 auto;
+}
+
+#mainFooter {
+  margin: 100px 0 0;
+}
+
+.wrapper {
+  /*width: 90%;*/
+  width: 100%;
+}
+
+h1 {
+  font-size: 3.0em;
+  margin:0;
+}
+
+// header styles
+
+#mainHeader {
+  margin-top: 50px;
+  text-align:center
+}
+
+// Footer
+
+footer {
+  padding: 0 0 0 50px;
+  .inner {
+    background: #fff;
+    -moz-border-radius: 25px 10px ;
+    border-radius: 25px 10px ;
+    h1 {
+      margin-right: 20px;
+      a {
+        color: inherit;
+      }
+    }
+    
+
+  }
+}
+// Main content 
+
+#mainContent {
+  margin-top: 0px;
+}
+
+.coffeePot {
+  float:left;
+  position: relative;
+  margin: 0px 0px -20px;
+  /*margin: 40px 20px 0;*/
+  /*width: 260px;*/
+  width: 241px;
+  .pot {
+    display:block;
+    width: 260px;
+    height:351px;
+    background: image-url('sprites/emptycaffinated.png') no-repeat;  
+
+    .decafehandle{
+      position:absolute;
+      width: 260px;
+      height:351px;
+      background: image-url('sprites/decafhandle.png') no-repeat;  
+    }
+
+    .freshness {
+      position:absolute;
+      width: 260px;
+      height:351px;
+      &.hrsOld1{
+        background: image-url('sprites/steam5.png') no-repeat;  
+      }
+      &.hrsOld2{
+        background: image-url('sprites/steam4.png') no-repeat;  
+      }
+      &.hrsOld3{
+        background: image-url('sprites/steam3.png') no-repeat;  
+      }
+      &.hrsOld4{
+        background: image-url('sprites/steam2.png') no-repeat;  
+      }
+      &.hrsOld5{
+        background: image-url('sprites/steam1.png') no-repeat;  
+      }
+    }
+
+    .level {
+      position:absolute;
+      width: 260px;
+      height:351px;
+      &.vol20{
+        background: image-url('sprites/liquid20.png') no-repeat;  
+      }
+      &.vol40{
+        background: image-url('sprites/liquid40.png') no-repeat;  
+      }
+      &.vol60{
+        background: image-url('sprites/liquid60.png') no-repeat;  
+      }
+      &.vol80{
+        background: image-url('sprites/liquid80.png') no-repeat;  
+      }
+      &.vol100{
+        background: image-url('sprites/liquid100.png') no-repeat;  
+      }
+    }
+
+    .emote{
+      position:absolute;
+      width: 260px;
+      height:351px;
+      &.sad {
+        background: image-url('sprites/emote_sad.png') no-repeat;
+      }
+      &.removed {
+        background: image-url('sprites/emote_omg.png') no-repeat;  
+      }
+      &.pumping {
+        background: image-url('sprites/emote_ouch.png') no-repeat;  
+      }
+      &.yay {
+        background: image-url('sprites/emote_yay.png') no-repeat;  
+      }
+      &.yayay {
+        background: image-url('sprites/emote_yay_yay.png') no-repeat;
+      }
+      &.apathy {
+        background: image-url('sprites/emote_apathy.png') no-repeat;  
+      }
+    }
+  }
+  h3 {
+    position: absolute;
+    top: 350px;
+    width: 230px;
+    text-align:center;
+    font-size: 0.9em;
+    line-height:1.0em;
+    a {
+      color: #6a1717;
+    }
+  }
+}
+
+img.team {
+  width: 100px;
+}
+
+img.sprite {
+  width: 80px;
+}
+
+.singlePage {
+  padding: 50px 0 0 200px;
+}
+
+.listFoot {
+  margin: 100px 0 0;
+}
+
+// special font
+.sonsie {
+  font-family: 'Sonsie One', cursive;
+}
+
+.arbutus {
+  font-family: 'Arbutus Slab', serif;
+}
+
+// Floaty magicks
+
+.right {
+  float: right;
+}
+.left {
+  float:left;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+ 
+.clearfix {
+  display: inline-block;
+}

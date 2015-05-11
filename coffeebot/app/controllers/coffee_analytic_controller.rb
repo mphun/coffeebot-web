@@ -1,0 +1,2 @@
+class CoffeeAnalyticController < ApplicationController
+end

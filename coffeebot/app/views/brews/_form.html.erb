@@ -1,0 +1,19 @@
+<% if @brew.errors.any? %>
+<div id="errorExplanation">
+  <h2><%= pluralize(@brew.errors.count, "error") %> prohibited this brew from being saved:</h2>
+  <ul>
+    <% @brew.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<p>Brew Type:<br />
+<%= f.text_field :brew_type %></p>
+<p>Brew Level:<br />
+<%= f.text_field :level %></p>
+<%= f.submit 'Save changes', :class => "btn btn-primary" %>
+<%= link_to 'Back', {:action => 'index'}, :class => "btn btn-link" %>
+

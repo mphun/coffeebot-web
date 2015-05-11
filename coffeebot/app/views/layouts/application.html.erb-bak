@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffeebot</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Arbutus+Slab|Sonsie+One' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+    <div id="mainContent" class="wrapper">
+        <div id="mainContent">
+            <% flash.each do |type, message| %>
+                <% if type == "error" %>
+                    <% javascript_tag do %>
+                        alert(<%= message.inspect %>);
+                    <% end %>
+                    <% next %>
+                <% end %>
+                <div class="flash_#{type}">
+                <%= message %>
+                </div>
+            <% end %>
+
+            <%= yield %>
+        </div>
+
+    </div>
+    <footer id="mainFooter">
+        <div class="navbar clearfix">
+            <ul class="nav navbar-nav inner">
+                <li><h1 class="arbutus"><a href="<%= root_path() %>">Coffeebot v.1</a></h1></li>
+                <li><%= link_to "About", about_path() %></li>
+                <li><%= link_to "Add Brew", {:action => 'new' }%></li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <%= javascript_include_tag "application" %>
+</body>
+
+</html>

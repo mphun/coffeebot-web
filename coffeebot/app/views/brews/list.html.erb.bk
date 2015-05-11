@@ -1,0 +1,63 @@
+<meta http-equiv="refresh" content="5" />
+
+<% if @brews.blank? %>
+  <p>There are no coffee brews currently in the system.</p>
+<% else %>
+
+  <div class="clearfix brewContainer">
+  <% @brews.each do |b| %>
+    <div class="coffeePot">
+        <div class="pot ">
+
+          <% if b.brew_type == "Decaf" %>
+              <div class="decafehandle"></div>
+          <% end %>
+          
+          <%
+            freshness = ((Time.now - b.filled_at)/1.hour).ceil
+            freshness = 6 unless (freshness > 0 && freshness < 6 && b.state == :normal || b.state == :pumping) 
+          %>
+          <div class="freshness hrsOld<%= freshness %>">
+
+        </div>
+
+        <% if b.level.to_i >= 0 && b.state == :normal %>
+
+        <% 
+          emote = 'yay'
+          if(b.level.to_i < 20)
+            emote = 'sad'
+          elsif(b.level.to_i < 60)
+            emote = 'apathy'
+          elsif(b.level.to_i == 100  && freshness < 2)
+            emote = 'yayay'
+          end 
+
+          if(freshness >= 6)
+            emote = 'sad'
+	  end
+        %>
+
+        <div class="freshness hrsOld<%= freshness %>"></div>
+        <div class="level vol<%= b.level.to_i %>"></div>
+        <div class="emote <%= emote %>"></div>
+           
+        <% else %>
+          <div class="freshness hrsOld<%= freshness %>"></div>
+          <div class="level vol<%= b.level.to_i %>"></div>
+          <div class="emote <%= b.state %>"></div>
+
+        <% end %>
+         
+
+      </div>
+      <h3><%= b.brew_type %></h3>
+      <br>
+      <center>----------------------</center> 
+      <center><b><%= distance_of_time_in_words(b.filled_at, Time.now, true) %></b>
+      <center><b><%= b.filled_at.strftime("%I:%M%p") %></b>
+    </div>
+
+  <% end %>
+  </div>
+<% end %>

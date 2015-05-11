@@ -1,0 +1,2 @@
+module AnalyticsUsageHelper
+end

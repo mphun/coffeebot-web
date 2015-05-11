@@ -1,0 +1,2 @@
+class AnalyticsUsageController < ApplicationController
+end

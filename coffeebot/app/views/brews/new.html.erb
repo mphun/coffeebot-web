@@ -1,0 +1,7 @@
+<div class="singlePage">
+  <h2>Add new coffee brew</h2>
+  <%= form_for(@brew) do |foo| %>
+  <%= render :partial => 'form', :locals => {:f => foo } %>
+  <% end %>
+</div>
+
